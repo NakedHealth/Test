@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run Script</title>
+</head>
+<body>
+    <button onclick="runScript()">Run Python Script</button>
+    <div id="result"></div>
+
+    <script>
+        async function runScript() {
+            try {
+                const response = await fetch('https://YOUR_HEROKU_APP.herokuapp.com/run_script', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                document.getElementById('result').innerHTML = `Output: ${data.output}`;
+            } catch (error) {
+                document.getElementById('result').innerHTML = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
