@@ -17,8 +17,7 @@ import subprocess
 
 app = Flask(__name__)
 
-
-@app.route('/')
+@app.route('/hello_world', methods=['POST'])
 def hello_world():
     return 'Hello World'
 
