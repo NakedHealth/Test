@@ -8,6 +8,8 @@ Created on Sat Feb 22 12:24:37 2025
 # app.py
 
 from flask import Flask, jsonify
+from flask_cors import CORS
+
 import subprocess
 
 
